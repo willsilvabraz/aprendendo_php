@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['prod_titulo']) && iss
     echo cad_produtos($_POST['prod_titulo'], $_POST['prod_descricao'], $_POST['prod_quantidade'], $_POST['prod_preco']); 
 }
 
-/*if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ler_estoque'])){
+if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ler_estoque'])){
     echo ler_estoque();
-}*/
+}
 
 
 function cad_usuario($email, $nome, $senha, $cargo){
@@ -53,11 +53,17 @@ function ler_estoque(){
     global $conn;
     $query = "SELECT * FROM produtos";
     $produtos = mysqli_query($conn, $query);
-    $carrinho = "";
+    $carrinho = array();
+
+    class Carrinho {
+        
+    }
 
     for($i = 0; $i < mysqli_num_rows($produtos); $i++){
         $produto = mysqli_fetch_array($produtos);       
-        $carrinho .= $produto['prod_titulo'].",";
+        array_push($carrinho ,$produto['prod_titulo']);
     }
-    return $carrinho;
+    $resultado = json_encode($carrinho);
+    
+    return $resultado;
 }

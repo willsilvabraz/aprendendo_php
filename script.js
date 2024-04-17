@@ -18,6 +18,8 @@ xml(cad_funcionario);
 xml(cad_produto);
 xml(ler_estoque);
 
+console.log(xml(ler_estoque));
+
 function xml($parametro){
     var xml = new XMLHttpRequest();
     xml.open("POST", "crud.php", true);
