@@ -1,19 +1,15 @@
 {
     "name": "morce/aprendendo_php",
-    "description":"Sei que vou chegar apesar de meus desvios",
+    "autoload": {
+        "psr-4": {
+            "Morce\\AprendendoPhp\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "willsilvabraz",
             "email": "willsilvabraz@gmail.com"
         }
     ],
-    "require": {},
-    "autoload": {
-        "files":[
-
-        ],
-        "psr-4": {
-            "app\\":"app"
-        }
-    }
+    "require": {}
 }
