@@ -1,5 +1,8 @@
 const buttons = document.querySelectorAll('.table button.btn-danger');
 
+
+
+
 var email = "email=" + encodeURIComponent("willian@cr2.com");
 var nome = "nome=" + encodeURIComponent("willian");
 var senha = "senha=" + encodeURIComponent("123");
@@ -9,6 +12,7 @@ var prod_titulo = "prod_titulo=" + encodeURIComponent("carne");
 var prod_descricao = "prod_descricao=" + encodeURIComponent("boy");
 var prod_quantidade = "prod_quantidade=" + encodeURIComponent("20");
 var prod_preco = "prod_preco=" + encodeURIComponent("50");
+
 var ler_estoque = "ler_estoque=" + encodeURIComponent("1");
 
 var cad_funcionario = `${email}&${nome}&${senha}&${cargo}`; 
@@ -16,7 +20,20 @@ var cad_produto = `${prod_titulo}&${prod_descricao}&${prod_quantidade}&${prod_pr
 
 xml(cad_funcionario);
 xml(cad_produto);
-xml(ler_estoque);
+var a = xml(ler_estoque);
+
+const objA = {
+    nome: a
+};
+
+
+
+
+var nomesArray = a.split(',');
+
+var bodyElement = document.getElementsByTagName('body')
+
+console.log(`valor de a: ${nomesArray}`);
 
 function xml($parametro){
     var xml = new XMLHttpRequest();
@@ -29,9 +46,20 @@ function xml($parametro){
     };
     xml.send($parametro);
 }
-//////////////////
+
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const name = button.getAttribute('name');
     });
 });
+
+/*
+    document.write('<a>');
+    for(var i = 0; i < ){
+    
+        document.write('');
+    }
+    document.write('</a>');
+    
+    
+    */
