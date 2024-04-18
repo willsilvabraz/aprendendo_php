@@ -1,8 +1,11 @@
 {
     "name": "morce/aprendendo_php",
     "autoload": {
+        "files":[
+            "app/helpers/constants.php"
+        ],
         "psr-4": {
-            "Morce\\AprendendoPhp\\": "src/"
+            "app\\": "app"
         }
     },
     "authors": [
