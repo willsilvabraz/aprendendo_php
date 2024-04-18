@@ -1,7 +1,6 @@
 {
     "name": "morce/aprendendo_php",
     "description":"Sei que vou chegar apesar de meus desvios",
-   
     "authors": [
         {
             "name": "willsilvabraz",
@@ -11,7 +10,7 @@
     "require": {},
     "autoload": {
         "files":[
-            
+
         ],
         "psr-4": {
             "app\\":"app"
