@@ -35,6 +35,8 @@ var bodyElement = document.getElementsByTagName('body')
 
 console.log(`valor de a: ${nomesArray}`);
 
+console.log(xml(ler_estoque));
+
 function xml($parametro){
     var xml = new XMLHttpRequest();
     xml.open("POST", "crud.php", true);
@@ -52,6 +54,7 @@ buttons.forEach(button => {
         const name = button.getAttribute('name');
     });
 });
+<<<<<<< HEAD
 
 /*
     document.write('<a>');
@@ -63,3 +66,5 @@ buttons.forEach(button => {
     
     
     */
+=======
+>>>>>>> 374881a42182689533f905b6156cbb2fc7385a8c
